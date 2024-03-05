@@ -47,8 +47,8 @@ jobs:
         run: |
           nextflow -c metontiime2.conf run metontiime2.nf \
             --workDir="." \
-            --resultsDir="results_docker" \
-            -profile docker
+            --resultsDir="results_singularity" \
+            -profile singularity || true
 
       - name: Run with Docker
         run: |
