@@ -1,0 +1,59 @@
+# Checks if the scripts actually work
+
+name: check_scripts
+
+on:
+  push:
+    branches:
+      - master
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: Free Disk Space
+        uses: jlumbroso/free-disk-space@main
+        with:
+          tool-cache: true
+          # all of these default to true, but feel free to set to
+          # false if necessary for your workflow
+          android: true
+          dotnet: true
+          haskell: true
+          large-packages: true
+          swap-storage: true
+
+      - uses: actions/checkout@v2
+
+      # From https://github.com/actions/setup-java?tab=readme-ov-file#eclipse-temurin
+      - uses: actions/setup-java@v4
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+      - run: which java
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '^1.13.1' # The Go version to download (if necessary) and use.
+      - run: go version
+
+      - uses: nf-core/setup-nextflow@v1
+
+      - uses: eWaterCycle/setup-singularity@v7
+        with:
+          singularity-version: 3.8.3
+
+      - name: Run with Singularity
+        run: |
+          nextflow -c metontiime2.conf run metontiime2.nf \
+            --workDir="." \
+            --resultsDir="results_docker" \
+            -profile docker
+
+      - name: Run with Docker
+        run: |
+          nextflow -c metontiime2.conf run metontiime2.nf \
+            --workDir="." \
+            --resultsDir="results_docker" \
+            -profile docker
+
