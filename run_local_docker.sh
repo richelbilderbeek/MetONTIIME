@@ -22,10 +22,14 @@ echo "db_sequence_fasta_filename: ${db_sequence_fasta_filename}"
 sample_metadata_tsv_filename="${PWD}/example_sample_metadata.tsv"
 echo "sample_metadata_tsv_filename: ${sample_metadata_tsv_filename}"
 
+taxonomy_tsv_filename="${PWD}/example_taxonomy.tsv"
+echo "taxonomy_tsv_filename: ${taxonomy_tsv_filename}"
+
 # Run locally
 nextflow -c metontiime2.conf run metontiime2.nf \
   --workDir="${work_dir}" \
   --resultsDir="${results_dir}" \
   --dbSequencesFasta="${db_sequence_fasta_filename}" \
   --sampleMetadata="${sample_metadata_tsv_filename}" \
+  --dbTaxonomyTsv="${taxonomy_tsv_filename}" \
   -profile docker 
