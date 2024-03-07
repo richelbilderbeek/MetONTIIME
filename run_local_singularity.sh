@@ -13,11 +13,22 @@ sed -i 's/ 10.GB / 7.GB /' metontiime2.conf
 # Change the executor from pbspro to local
 sed -i "s/executor = 'pbspro'/executor = 'local'/" metontiime2.conf
 
+work_dir="${PWD}/work_local_singularity"
+echo "work_dir: ${work_dir}"
+
+results_dir="${PWD}/results_local_singularity"
+echo "results_dir: ${results_dir}"
+
+db_sequence_fasta_filename="${PWD}/example_db_sequence.fasta"
+echo "db_sequence_fasta_filename: ${db_sequence_fasta_filename}"
+
+sample_metadata_tsv_filename="${PWD}/example_sample_metadata.tsv"
+echo "sample_metadata_tsv_filename: ${sample_metadata_tsv_filename}"
+
 # Run locally
 nextflow -c metontiime2.conf run metontiime2.nf \
-  --workDir=${PWD} \
-  --resultsDir="${PWD}/results_local_singularity" \
+  --workDir="${work_dir}" \
+  --resultsDir="${results_dir}" \
+  --dbSequencesFasta="${db_sequence_fasta_filename}" \
+  --sampleMetadata="${sample_metadata_tsv_filename}" \
   -profile singularity
-
-
-
