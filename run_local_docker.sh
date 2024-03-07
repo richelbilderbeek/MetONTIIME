@@ -37,3 +37,28 @@ nextflow -c metontiime2.conf run metontiime2.nf \
   --sampleMetadata="${sample_metadata_tsv_filename}" \
   --dbTaxonomyTsv="${taxonomy_tsv_filename}" \
   -profile docker 
+
+exit 42
+
+: <<'END_COMMENT'
+
+  There was an issue with loading the file /home/richel/GitHubs/MetONTIIME/example_sample_metadata.tsv as metadata:
+  
+    Found unrecognized ID column name 'SH0985654.09FU_KY231246_reps' while searching for header. The first column name in the header defines the ID column, and must be one of these values:
+  
+    Case-insensitive: 'feature id', 'feature-id', 'featureid', 'id', 'sample id', 'sample-id', 'sampleid'
+  
+    Case-sensitive: '#OTU ID', '#OTUID', '#Sample ID', '#SampleID', 'sample_name'
+  
+    NOTE: Metadata files must contain tab-separated values.
+  
+    There may be more errors present in the metadata file. To get a full report, sample/feature metadata files can be validated with Keemei: https://keemei.qiime2.org
+  
+    Find details on QIIME 2 metadata requirements here: https://docs.qiime2.org/2023.9/tutorials/metadata/
+
+Work dir:
+  /home/richel/GitHubs/MetONTIIME/work/22/b4e5a41ca15629929de92a192221d0
+
+Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
+
+END_COMMENT
