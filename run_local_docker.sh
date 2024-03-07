@@ -19,7 +19,7 @@ echo "results_dir: ${results_dir}"
 db_sequence_fasta_filename="${PWD}/example_db_sequence.fasta"
 echo "db_sequence_fasta_filename: ${db_sequence_fasta_filename}"
 
-sample_metadata_tsv_filename="${PWD}/sample-metadata.tsv"
+sample_metadata_tsv_filename="${PWD}/example_sample_metadata.tsv"
 echo "sample_metadata_tsv_filename: ${sample_metadata_tsv_filename}"
 
 # Run locally
