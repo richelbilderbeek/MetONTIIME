@@ -9,3 +9,4 @@ noheader_taxonomy_qiime_ver9_dynamic_alleukaryotes_25.07.2023.tsv
 taxonomy_qiime_ver9_dynamic_alleukaryotes_25.07.2023.tsv
 work_local_docker/
 seqkitQ15cutadaptlib1sup_bc01.fastq.gz
+work_local_singularity/
