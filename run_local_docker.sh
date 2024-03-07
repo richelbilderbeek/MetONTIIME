@@ -16,7 +16,7 @@ echo "work_dir: ${work_dir}"
 results_dir="${PWD}/results_local_docker"
 echo "results_dir: ${results_dir}"
 
-db_sequence_fasta_filename="${PWD}/sequence.fasta"
+db_sequence_fasta_filename="${PWD}/example_db_sequence.fasta"
 echo "db_sequence_fasta_filename: ${db_sequence_fasta_filename}"
 
 sample_metadata_tsv_filename="${PWD}/sample-metadata.tsv"
