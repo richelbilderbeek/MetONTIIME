@@ -62,3 +62,21 @@ Work dir:
 Tip: view the complete command output by changing to the process work dir and entering the command `cat .command.out`
 
 END_COMMENT
+
+
+: <<'END_COMMENT'
+
+The file example_sample_metadata.tsv was copied from 
+noheader_taxonomy_qiime_ver9_dynamic_alleukaryotes_25.07.2023.tsv
+
+However, the original file lacks a header!
+
+To fix this: add as a first line:
+
+feature id	taxon
+
+there must be a tab between `feature id` and `taxon` (and between `feature` and `id` must be a space)
+
+END_COMMENT
+
+
