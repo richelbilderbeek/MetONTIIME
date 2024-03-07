@@ -13,9 +13,9 @@ sed -i 's/ 10.GB / 7.GB /' metontiime2.conf
 work_dir="${PWD}/work_local_docker"
 echo "work_dir: ${work_dir}"
 
-# Get the sequences in the correct folder
+# Get the sequences in the correct folder 
 mkdir "${work_dir}"
-cp Zymo-GridION-EVEN-BB-SN_sup_pass_filtered_27F_1492Rw_1000_reads.fastq.gz "${work_dir}"
+cp example_reads.fastq.gz "${work_dir}"
 
 results_dir="${PWD}/results_local_docker"
 echo "results_dir: ${results_dir}"
