@@ -2,3 +2,5 @@
 .nextflow.log
 .nextflow.log.*
 metontiime2.conf
+work/
+results_local_docker/
