@@ -1,6 +1,6 @@
 # Checks if the scripts actually work
 
-name: check_scripts
+name: run_local_docker
 
 on:
   push:
@@ -39,17 +39,5 @@ jobs:
 
       - uses: nf-core/setup-nextflow@v1
 
-      - uses: eWaterCycle/setup-singularity@v7
-        with:
-          singularity-version: 3.8.3
-
       - name: Run with Singularity
-        run: ./run_
-
-      - name: Run with Docker
-        run: |
-          nextflow -c metontiime2.conf run metontiime2.nf \
-            --workDir="." \
-            --resultsDir="results_docker" \
-            -profile docker
-
+        run: ./run_local_docker.sh
