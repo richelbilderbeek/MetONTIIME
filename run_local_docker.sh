@@ -24,7 +24,7 @@ sed -i "s/diversityAnalyses = true/diversityAnalyses = false/" metontiime2.conf
 sed -i "s/clusteringIdentity=1/clusteringIdentity=0.1/" metontiime2.conf
 	
 # Set an overly-generous low minimum fraction of assignments to be accepted as consensus assignment (it should be close to 1.0)
-sed -i "s/minConsensus=0.7/minConsensus=0.5/" metontiime2.conf
+sed -i "s/minConsensus=0.7/minConsensus=0.51/" metontiime2.conf
     
 # Show the final config file
 cat metontiime2.conf
