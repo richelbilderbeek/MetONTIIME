@@ -16,9 +16,10 @@ sed -i "s/executor = 'pbspro'/executor = 'local'/" metontiime2.conf
 work_dir="${PWD}/work_local_singularity"
 echo "work_dir: ${work_dir}"
 
-# Get the sequences in the correct folder 
+# Get the example sequences in the correct folder 
 mkdir "${work_dir}"
-cp example_reads.fastq.gz "${work_dir}"
+cp example_1.fastq.gz "${work_dir}"
+cp example_2.fastq.gz "${work_dir}"
 
 results_dir="${PWD}/results_local_singularity"
 echo "results_dir: ${results_dir}"
