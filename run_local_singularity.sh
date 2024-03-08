@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#####################################
+# Create a reproducible config file #
+#####################################
+
 # Download a fresh config file
 rm -f metontiime2.conf
 wget https://raw.githubusercontent.com/MaestSi/MetONTIIME/master/metontiime2.conf
@@ -15,6 +19,13 @@ sed -i "s/executor = 'pbspro'/executor = 'local'/" metontiime2.conf
 
 # Do not do a diversity analysis with one ?species
 sed -i "s/diversityAnalyses = true/diversityAnalyses = false/" metontiime2.conf
+
+# Show the final config file
+cat metontiime2.conf
+
+#####################################
+# Do the analysis                   #
+#####################################
 
 work_dir="${PWD}/work_local_singularity"
 echo "work_dir: ${work_dir}"

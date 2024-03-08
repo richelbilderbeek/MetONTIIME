@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#####################################
+# Create a reproducible config file #
+#####################################
+
 # Download a fresh config file
 rm -f metontiime2.conf
 wget https://raw.githubusercontent.com/MaestSi/MetONTIIME/master/metontiime2.conf
@@ -10,11 +14,18 @@ sed -i 's/ ? 6 : 1 }/ ? 4 : 1 }/' metontiime2.conf
 # Change the memory use from 10 to 7 GB
 sed -i 's/ 10.GB / 7.GB /' metontiime2.conf
 
+# No need with Docker: Change the executor from pbspro to local
+# sed -i "s/executor = 'pbspro'/executor = 'local'/" metontiime2.conf
+
 # Do not do a diversity analysis with one ?species
 sed -i "s/diversityAnalyses = true/diversityAnalyses = false/" metontiime2.conf
 
-# Need to decrease the sampling depth
-# https://forum.qiime2.org/t/plugin-error-from-diversity-ordinations/19588
+# Show the final config file
+cat metontiime2.conf
+
+#####################################
+# Do the analysis                   #
+#####################################
 
 work_dir="${PWD}/work_local_docker"
 echo "work_dir: ${work_dir}"
