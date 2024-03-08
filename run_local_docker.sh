@@ -10,6 +10,9 @@ sed -i 's/ ? 6 : 1 }/ ? 4 : 1 }/' metontiime2.conf
 # Change the memory use from 10 to 7 GB
 sed -i 's/ 10.GB / 7.GB /' metontiime2.conf
 
+# Do not do a diversity analysis with one ?species
+sed -i "s/diversityAnalyses = true/diversityAnalyses = false/" metontiime2.conf
+
 # Need to decrease the sampling depth
 # https://forum.qiime2.org/t/plugin-error-from-diversity-ordinations/19588
 

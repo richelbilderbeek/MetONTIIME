@@ -13,6 +13,9 @@ sed -i 's/ 10.GB / 7.GB /' metontiime2.conf
 # Change the executor from pbspro to local
 sed -i "s/executor = 'pbspro'/executor = 'local'/" metontiime2.conf
 
+# Do not do a diversity analysis with one ?species
+sed -i "s/diversityAnalyses = true/diversityAnalyses = false/" metontiime2.conf
+
 work_dir="${PWD}/work_local_singularity"
 echo "work_dir: ${work_dir}"
 
