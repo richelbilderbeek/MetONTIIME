@@ -13,14 +13,12 @@ sed -i 's/ 10.GB / 7.GB /' metontiime2.conf
 # Need to decrease the sampling depth
 # https://forum.qiime2.org/t/plugin-error-from-diversity-ordinations/19588
 
-
 work_dir="${PWD}/work_local_docker"
 echo "work_dir: ${work_dir}"
 
-# Get the example sequences in the correct folder 
+# Get the example sequence in the correct folder 
 mkdir "${work_dir}"
-cp example_1.fastq.gz "${work_dir}"
-cp example_2.fastq.gz "${work_dir}"
+cp example_reads.fastq.gz "${work_dir}"
 
 results_dir="${PWD}/results_local_docker"
 echo "results_dir: ${results_dir}"
