@@ -1,13 +1,12 @@
-# Checks if the scripts actually work
-
 name: run_local_singularity
 
 on:
   push:
-    branches:
-      - master
+  pull_request:
+  schedule:
+  - cron: "0 0 13 * *"
 jobs:
-  deploy:
+  run_local_singularity:
     runs-on: ubuntu-latest
     steps:
 

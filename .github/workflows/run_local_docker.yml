@@ -1,13 +1,13 @@
-# Checks if the scripts actually work
-
 name: run_local_docker
 
 on:
   push:
-    branches:
-      - master
+  pull_request:
+  schedule:
+  - cron: "0 0 13 * *"
+
 jobs:
-  deploy:
+  run_local_docker:
     runs-on: ubuntu-latest
     steps:
 
@@ -39,5 +39,5 @@ jobs:
 
       - uses: nf-core/setup-nextflow@v1
 
-      - name: Run with Singularity
+      - name: Run with Docker
         run: ./run_local_docker.sh
